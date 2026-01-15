@@ -1,0 +1,183 @@
+/* Custom Styles & Utilities */
+body {
+  background-color: #020617;
+  color: #f8fafc;
+  overflow-x: hidden;
+  /* Noise Texture Overlay */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(30, 41, 59, 0.3);
+  /* More transparent */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-nav {
+  background: rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, #38bdf8, #c084fc, #fb7185);
+  /* Brighter gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient Border Button */
+.btn-gradient-border {
+  position: relative;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 9999px;
+  z-index: 1;
+}
+
+.btn-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 1000px;
+  padding: 2px;
+  background: linear-gradient(45deg, #0ea5e9, #8b5cf6, #f43f5e);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+  border: 2px solid #0f172a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Typing Cursor */
+.typing-cursor::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  color: #0ea5e9;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Card Hover Glow & Lift */
+.hover-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.3);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Education Animation Styles - Premium & Calm */
+
+/* Timeline Line Reveal */
+.edu-line-reveal {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Custom ease-out-quint for silky smoothness */
+}
+
+.edu-line-reveal.active {
+  transform: scaleY(1);
+}
+
+/* Timeline Dot Scale In */
+.edu-dot-reveal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Slight pop/overshoot but gentle */
+}
+
+/* Note: translate(-50%, -50%) is needed because existing dot uses absolute centering potentially? 
+   Checking existing code: class="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2"
+   So we need to maintain that existing transform while animating scale.
+*/
+.edu-dot-reveal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Card Slides - Desktop */
+@media (min-width: 768px) {
+  .edu-card-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .edu-card-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .edu-card-left.active,
+  .edu-card-right.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Card Slides - Mobile (Fade Up only) */
+@media (max-width: 767px) {
+  .edu-card-left,
+  .edu-card-right {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .edu-card-left.active,
+  .edu-card-right.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
