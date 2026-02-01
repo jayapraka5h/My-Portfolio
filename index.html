@@ -8,8 +8,20 @@
     <meta name="description"
         content="Portfolio of K Jayaprakash - Full Stack Developer specializing in Java, React, and AI/ML.">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+            class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-blob">
+        </div>
+        <div
+            class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent/15 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000">
+        </div>
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 hidden"></div>
+    </div>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
@@ -22,97 +34,85 @@
     <link rel="stylesheet" href="./styles.css?v=2">
 </head>
 
-<body class="font-sans antialiased selection:bg-primary selection:text-white">
+<body class="font-sans antialiased selection:bg-primary selection:text-white bg-slate-50 text-slate-900 dark:bg-[#020617] dark:text-[#f8fafc] transition-colors duration-300">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 z-[9999] transition-all duration-100 ease-out shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
 
     <!-- Background Elements -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div
-            class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob">
+            class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-blob">
         </div>
         <div
-            class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000">
+            class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000">
         </div>
         <div
-            class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent/15 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000">
+            class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent/15 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000">
         </div>
         <!-- Grid Pattern Overlay -->
         <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 hidden"></div>
     </div>
 
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 sm:h-24">
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-darker/80 backdrop-blur-sm shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-xl sm:text-2xl font-bold tracking-tight group flex items-center gap-2">
-                        <div
-                            class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-primary/50 transition-all">
-                            K</div>
-                        <span
-                            class="bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 group-hover:to-white transition-all">Jayaprakash</span>
+                <div class="flex items-center">
+                    <a href="#home" class="flex items-center space-x-2 font-bold whitespace-nowrap cursor-pointer">
+                        <img src="./images/profile.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary">
+                        <span class="text-xl font-sans font-bold"><span class="text-slate-900 dark:text-white">Port</span><span class="text-primary">folio</span></span>
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about"
-                            class="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group">
-                            About
-                            <span
-                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                        </a>
-                        <a href="#skills"
-                            class="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group">
-                            Skills
-                            <span
-                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                        </a>
-                        <a href="#projects"
-                            class="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group">
-                            Projects
-                            <span
-                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                        </a>
-                        <a href="#education"
-                            class="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group">
-                            Education
-                            <span
-                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                        </a>
-                        <a href="#contact"
-                            class="px-5 py-2.5 text-sm font-semibold text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all hover:scale-105 active:scale-95">Contact
-                            Me</a>
+                <div class="hidden md:flex items-center justify-end flex-1 ml-4">
+                    <div class="flex items-center space-x-1 lg:space-x-2">
+                        <a href="#home" class="px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-all duration-200 whitespace-nowrap">Home</a>
+                        <a href="#about" class="px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-all duration-200 whitespace-nowrap">About</a>
+                        <a href="#skills" class="px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-all duration-200 whitespace-nowrap">Skills</a>
+                        <a href="#projects" class="px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-all duration-200 whitespace-nowrap">Projects</a>
+                        <a href="#education" class="px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-all duration-200 whitespace-nowrap">Education</a>
+                        <a href="#contact" class="px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer text-white bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 shadow-lg hover:shadow-primary/25 rounded-full font-medium whitespace-nowrap">Contact</a>
+                        
+                        <!-- Theme Toggle (Simple Switch) -->
+                        <button id="theme-toggle" class="relative inline-flex items-center h-8 w-14 rounded-full bg-slate-200 dark:bg-slate-700 transition-colors focus:outline-none ml-2 shadow-inner" aria-label="Toggle Dark Mode">
+                            <span class="sr-only">Toggle Dark Mode</span>
+                            <!-- Knob -->
+                            <span id="theme-toggle-knob" class="inline-block w-6 h-6 transform bg-white rounded-full shadow-md transition-transform translate-x-1 dark:translate-x-7 flex items-center justify-center">
+                                <!-- Icons inside knob -->
+                                <svg id="theme-toggle-light-icon" class="w-4 h-4 text-amber-500 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path>
+                                </svg>
+                                <svg id="theme-toggle-dark-icon" class="w-4 h-4 text-slate-800 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                                </svg>
+                            </span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden items-center space-x-2">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="hidden md:hidden glass border-t border-slate-800" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-white/5">About</a>
-                <a href="#skills"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-white/5">Skills</a>
-                <a href="#projects"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-white/5">Projects</a>
-                <a href="#education"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-white/5">Education</a>
-                <a href="#contact"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary/10 hover:bg-primary/20 mt-4">Contact
-                    Me</a>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="hidden md:hidden bg-white/95 dark:bg-darker/95 border-t border-slate-200 dark:border-slate-800" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5">Contact</a>
             </div>
         </div>
     </nav>
@@ -129,46 +129,46 @@
                         class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 animate-pulse">
                     </div>
                     <div
-                        class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-2 bg-slate-900/50 backdrop-blur-md border border-white/10 shadow-2xl overflow-hidden ring-1 ring-white/20">
+                        class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-2 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden ring-1 ring-black/5 dark:ring-white/20">
                         <img src="./images/profile.jpg" alt="K Jayaprakash"
                             class="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-700">
                     </div>
 
                     <!-- Status Badge Floating -->
                     <div
-                        class="absolute bottom-6 right-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-emerald-500/30 backdrop-blur-md shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
+                        class="absolute bottom-6 right-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 border border-emerald-500/30 backdrop-blur-md shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
                         <span class="relative flex h-3 w-3">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                         </span>
-                        <span class="text-xs font-bold text-white tracking-wide uppercase">Open to Work</span>
+                        <span class="text-xs font-bold text-slate-800 dark:text-white tracking-wide uppercase">Open to Work</span>
                     </div>
                 </div>
 
                 <!-- Right: Content -->
-                <div class="text-center lg:text-left max-w-2xl lg:order-2 order-2">
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 leading-tight">
+                <div class="text-center max-w-2xl lg:order-2 order-2 mx-auto">
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 leading-tight text-slate-900 dark:text-white">
                         Hi, I'm <br />
                         <span class="text-gradient drop-shadow-2xl">K Jayaprakash</span>
                     </h1>
 
                     <div
-                        class="text-xl md:text-2xl lg:text-3xl text-slate-300 font-light mb-8 flex flex-col lg:flex-row gap-2 justify-center lg:justify-start items-center">
+                        class="text-xl md:text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 font-light mb-8 flex flex-col lg:flex-row gap-2 justify-center items-center">
                         <span class="opacity-80">I build</span>
                         <span
-                            class="font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary typing-cursor"
+                            class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary typing-cursor"
                             id="typing-text"></span>
                     </div>
 
-                    <p class="text-lg text-slate-400 mb-10 leading-relaxed font-body max-w-xl mx-auto lg:mx-0">
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-body max-w-xl mx-auto">
                         Flowlite simplifies workflows through automation and single sign-on.
                         Passionate about building stable IT solutions for a better future.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center">
+                    <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
                         <a href="#projects"
-                            class="group relative px-8 py-4 bg-white text-darker font-bold rounded-full hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 w-full sm:w-auto">
+                            class="group relative px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-darker font-bold rounded-full hover:bg-slate-800 dark:hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 w-full sm:w-auto">
                             <span class="relative z-10 flex items-center justify-center gap-2">
                                 View Work
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none"
@@ -179,15 +179,15 @@
                             </span>
                         </a>
                         <a href="#contact"
-                            class="px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 text-white font-semibold transition-all hover:border-white/30 w-full sm:w-auto">
+                            class="px-8 py-4 rounded-full border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 text-slate-700 dark:text-white font-semibold transition-all hover:border-slate-400 dark:hover:border-white/30 w-full sm:w-auto">
                             Contact Me
                         </a>
                     </div>
 
                     <!-- Social Links -->
-                    <div class="mt-12 flex justify-center lg:justify-start space-x-6">
+                    <div class="mt-12 flex justify-center space-x-6">
                         <a href="mailto:kammajayaprakash@gmail.com"
-                            class="p-2 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-all transform hover:scale-110"
+                            class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-all transform hover:scale-110"
                             title="Email Me">
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -195,21 +195,21 @@
                             </svg>
                         </a>
                         <a href="https://www.linkedin.com/in/jayapraka5h" target="_blank"
-                            class="p-2 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-all transform hover:scale-110">
+                            class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-all transform hover:scale-110">
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
                         </a>
                         <a href="https://github.com/jayapraka5h" target="_blank"
-                            class="p-2 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-all transform hover:scale-110">
+                            class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-all transform hover:scale-110">
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                             </svg>
                         </a>
                         <a href="https://www.hackerrank.com/profile/jayapraka5h" target="_blank"
-                            class="p-2 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-all transform hover:scale-110">
+                            class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-all transform hover:scale-110">
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.745 13.916c-.34.346-.777.291-1.12.01l-1.64-1.332v3.911c0 .546-.445.99-1.002.99h-1.996c-.557 0-1.002-.444-1.002-.99v-3.896l-1.611 1.318c-.343.28-.78.335-1.12.01-.35-.333-.356-.889-.009-1.232l3.704-3.64c.338-.335.885-.335 1.229 0l3.715 3.65c.341.334.331.879-.148 1.201zm-4.745-9.416l-3.238 2.66h6.476l-3.238-2.66z" />
@@ -222,7 +222,7 @@
             <!-- Scroll Indicator -->
             <div
                 class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block z-10 opacity-50">
-                <a href="#about" class="text-slate-400 hover:text-white transition-colors">
+                <a href="#about" class="text-slate-400 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -232,17 +232,17 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 relative z-10 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-24 relative z-10">
+        <div class="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Visual / Image Place -->
                 <div class="reveal relative group">
                     <div
                         class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-2xl transform rotate-3 blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-500">
                     </div>
-                    <div class="glass p-10 rounded-2xl relative border border-white/10 hover-glow">
+                    <div class="glass p-10 rounded-2xl relative border border-white/10 dark:border-white/10 hover-glow">
                         <div class="prose prose-invert">
-                            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2 text-slate-800 dark:text-white">
                                 <span class="text-3xl">👨‍💻</span> Quick Bio
                             </h3>
                             <ul class="space-y-6">
@@ -251,8 +251,8 @@
                                         class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
                                         ➜</div>
                                     <div>
-                                        <p class="font-semibold text-white">AI & ML Student</p>
-                                        <p class="text-sm text-slate-400">Anantha Lakshmi Institute of Technology and
+                                        <p class="font-semibold text-slate-900 dark:text-white">AI & ML Student</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Anantha Lakshmi Institute of Technology and
                                             Sciences.</p>
                                     </div>
                                 </li>
@@ -261,8 +261,8 @@
                                         class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 text-secondary">
                                         ➜</div>
                                     <div>
-                                        <p class="font-semibold text-white">Full Stack Arsenal</p>
-                                        <p class="text-sm text-slate-400">Java, JS, React, Tailwind, Spring Boot, MySQL.
+                                        <p class="font-semibold text-slate-900 dark:text-white">Full Stack Arsenal</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Java, JS, React, Tailwind, Spring Boot, MySQL.
                                         </p>
                                     </div>
                                 </li>
@@ -271,8 +271,8 @@
                                         class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent">
                                         ➜</div>
                                     <div>
-                                        <p class="font-semibold text-white">Hands-on Experience</p>
-                                        <p class="text-sm text-slate-400">Trained at Tap Academy with real-world
+                                        <p class="font-semibold text-slate-900 dark:text-white">Hands-on Experience</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Trained at Tap Academy with real-world
                                             projects.</p>
                                     </div>
                                 </li>
@@ -282,22 +282,22 @@
                 </div>
 
                 <!-- Text Content -->
-                <div class="reveal delay-200">
+                <div class="reveal delay-200 text-center">
                     <div
                         class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase mb-4 border border-primary/20">
                         About Me</div>
-                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Driven by Tech, <br /><span
+                    <h3 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Driven by Tech, <br /><span
                             class="text-gradient">Inspired by Innovation</span>.</h3>
 
-                    <div class="space-y-6 text-slate-400 font-body leading-relaxed text-lg">
+                    <div class="space-y-6 text-slate-600 dark:text-slate-400 font-body leading-relaxed text-lg">
                         <p>
-                            I am an <strong class="text-slate-200">AI & ML student</strong> currently studying at
+                            I am an <strong class="text-slate-900 dark:text-slate-200">AI & ML student</strong> currently studying at
                             Anantha Lakshmi Institute of Technology and Sciences, Anantapur.
                             My passion lies in learning new technologies and building a strong foundation in software
                             development.
                         </p>
                         <p>
-                            With a solid grasp of <strong class="text-slate-200">Java and JavaScript</strong>, I bridge
+                            With a solid grasp of <strong class="text-slate-900 dark:text-slate-200">Java and JavaScript</strong>, I bridge
                             the gap between frontend aesthetics and backend functionality.
                             I have honed my skills in React and Tailwind for crafting responsive interfaces, while
                             leveraging Spring Boot
@@ -307,13 +307,13 @@
 
                     <div class="mt-10 flex flex-wrap gap-4">
                         <div
-                            class="px-6 py-4 rounded-xl bg-surface border border-white/5 text-center min-w-[120px] hover:border-primary/30 transition-colors">
-                            <span class="block text-3xl font-bold text-white mb-1">2026</span>
+                            class="px-6 py-4 rounded-xl bg-white dark:bg-surface border border-slate-200 dark:border-white/5 text-center min-w-[120px] hover:border-primary/30 transition-colors shadow-sm dark:shadow-none">
+                            <span class="block text-3xl font-bold text-slate-900 dark:text-white mb-1">2026</span>
                             <span class="text-xs text-slate-500 uppercase tracking-widest">Graduation</span>
                         </div>
                         <div
-                            class="px-6 py-4 rounded-xl bg-surface border border-white/5 text-center min-w-[120px] hover:border-primary/30 transition-colors">
-                            <span class="block text-3xl font-bold text-white mb-1">2+</span>
+                            class="px-6 py-4 rounded-xl bg-white dark:bg-surface border border-slate-200 dark:border-white/5 text-center min-w-[120px] hover:border-primary/30 transition-colors shadow-sm dark:shadow-none">
+                            <span class="block text-3xl font-bold text-slate-900 dark:text-white mb-1">2+</span>
                             <span class="text-xs text-slate-500 uppercase tracking-widest">Projects</span>
                         </div>
                     </div>
@@ -323,102 +323,16 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 reveal">
-                <div
-                    class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold tracking-wider uppercase mb-4 border border-secondary/20">
-                    My Arsenal</div>
-                <h3 class="text-3xl md:text-5xl font-bold text-white">Technical <span
-                        class="text-gradient">Expertise</span></h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Frontend -->
-                <div
-                    class="glass p-8 rounded-3xl border border-white/5 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] hover:-translate-y-2 transition-all duration-300 reveal delay-100 group flex flex-col h-full">
-                    <div
-                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6 text-primary text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-inner ring-1 ring-white/5">
-                        🎨</div>
-                    <h4 class="text-xl font-bold text-white mb-4 tracking-wide">Frontend</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-primary/20 hover:border-primary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-primary/10">HTML5</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-primary/20 hover:border-primary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-primary/10">CSS3</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-primary/20 hover:border-primary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-primary/10">JavaScript</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-primary/20 hover:border-primary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-primary/10">React</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-primary/20 hover:border-primary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-primary/10">Tailwind</span>
-                    </div>
-                </div>
-
-                <!-- Backend -->
-                <div
-                    class="glass p-8 rounded-3xl border border-white/5 hover:border-secondary/30 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] hover:-translate-y-2 transition-all duration-300 reveal delay-200 group flex flex-col h-full">
-                    <div
-                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center mb-6 text-secondary text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-inner ring-1 ring-white/5">
-                        ⚙️</div>
-                    <h4 class="text-xl font-bold text-white mb-4 tracking-wide">Backend</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-secondary/20 hover:border-secondary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-secondary/10">Java</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-secondary/20 hover:border-secondary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-secondary/10">Spring
-                            Boot</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-secondary/20 hover:border-secondary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-secondary/10">REST
-                            API</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-secondary/20 hover:border-secondary/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-secondary/10">JDBC</span>
-                    </div>
-                </div>
-
-                <!-- Database & Tools -->
-                <div
-                    class="glass p-8 rounded-3xl border border-white/5 hover:border-accent/30 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] hover:-translate-y-2 transition-all duration-300 reveal delay-300 group flex flex-col h-full">
-                    <div
-                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 text-accent text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-inner ring-1 ring-white/5">
-                        🗄️</div>
-                    <h4 class="text-xl font-bold text-white mb-4 tracking-wide">Data & Tools</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-accent/20 hover:border-accent/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-accent/10">MySQL</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-accent/20 hover:border-accent/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-accent/10">MongoDB</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-accent/20 hover:border-accent/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-accent/10">Git</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-accent/20 hover:border-accent/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-accent/10">Docker</span>
-                    </div>
-                </div>
-
-                <!-- AI Tools -->
-                <div
-                    class="glass p-8 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:-translate-y-2 transition-all duration-300 reveal delay-400 group flex flex-col h-full">
-                    <div
-                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 flex items-center justify-center mb-6 text-emerald-400 text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-inner ring-1 ring-white/5">
-                        🤖</div>
-                    <h4 class="text-xl font-bold text-white mb-4 tracking-wide">AI Tools</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-emerald-500/20 hover:border-emerald-500/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-emerald-500/10">Copilot</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-emerald-500/20 hover:border-emerald-500/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-emerald-500/10">ChatGPT</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-emerald-500/20 hover:border-emerald-500/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-emerald-500/10">Snyk</span>
-                        <span
-                            class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/50 hover:bg-emerald-500/20 hover:border-emerald-500/30 hover:text-white transition-all cursor-default shadow-sm hover:shadow-emerald-500/10">Diffblue</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <!-- Expertise Overview (Zoho-style Scroll) -->
+    <section id="skills" class="pin-section relative z-10 transition-colors duration-300" style="min-height: 400vh;">
+        
+    <div class="pin-wrapper px-4 sm:px-6 lg:px-8 z-30">
+        <div
+            class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold tracking-wider uppercase mb-4 border border-secondary/20">
+            My Arsenal</div>
         <!-- Logo Slider -->
-        <div class="mt-20 relative overflow-hidden z-20">
-            <h3 class="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 mb-6">AI Tools I Use</h3>
+        <div class="mt-4 relative overflow-hidden z-20">
+            <h3 class="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 mb-6">Tools I use to build and learn every day</h3>
             
             <div class="relative mx-auto w-[95%] sm:w-[80%] md:w-[60%] lg:w-[50%] overflow-hidden">
                 <div class="logo-slider rounded-2xl">
@@ -428,34 +342,138 @@
                     <img src="https://www.sadiquedev.xyz/static/media/claude-color.12373de122f1efb901e6ae0ad96d9dbc.svg" alt="Claude">
                     <img src="https://www.sadiquedev.xyz/static/media/lovable-logo-icon.e7abcc51d638d2b688f9961e22440268.svg" alt="Lovable">
                     <img src="https://www.sadiquedev.xyz/static/media/bolt%20ai%20logo.1490fdc08afc9b1e23ab.png" alt="Bolt">
-                    <img src="https://www.sadiquedev.xyz/static/media/cursor.bcf4efceb44684ac4f025483013febb8.svg" alt="Cursor">
                     <img src="https://www.sadiquedev.xyz/static/media/perplexity-ai-seeklogo.438394d99378ef500fbbb4fac3971476.svg" alt="Perplexity">
                     <img src="./images/icons8-git-48.png" alt="Git">
                     <img src="./images/icons8-gemini-ai-32.png" alt="Gemini">
+                    <img src="https://www.sadiquedev.xyz/static/media/cursor.bcf4efceb44684ac4f025483013febb8.svg" alt="Cursor">
+                    <img src="./images/google_antigravity-logo_brandlogos.net_qu4jc-768x708.png" alt="Anti Gravity">
 
                     <!-- Duplicates for Infinite Loop -->
                     <img src="https://www.sadiquedev.xyz/static/media/ChatGPT-Logo.db248728bf10936e7f1f5a1c8dfb49aa.svg" alt="ChatGPT">
                     <img src="https://www.sadiquedev.xyz/static/media/claude-color.12373de122f1efb901e6ae0ad96d9dbc.svg" alt="Claude">
                     <img src="https://www.sadiquedev.xyz/static/media/lovable-logo-icon.e7abcc51d638d2b688f9961e22440268.svg" alt="Lovable">
                     <img src="https://www.sadiquedev.xyz/static/media/bolt%20ai%20logo.1490fdc08afc9b1e23ab.png" alt="Bolt">
-                    <img src="https://www.sadiquedev.xyz/static/media/cursor.bcf4efceb44684ac4f025483013febb8.svg" alt="Cursor">
                     <img src="https://www.sadiquedev.xyz/static/media/perplexity-ai-seeklogo.438394d99378ef500fbbb4fac3971476.svg" alt="Perplexity">
                     <img src="./images/icons8-git-48.png" alt="Git">
                     <img src="./images/icons8-gemini-ai-32.png" alt="Gemini">
+                    <img src="https://www.sadiquedev.xyz/static/media/cursor.bcf4efceb44684ac4f025483013febb8.svg" alt="Cursor">
+                    <img src="./images/google_antigravity-logo_brandlogos.net_qu4jc-768x708.png" alt="Anti Gravity">
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
+            <div class="w-full max-w-[1100px] relative h-full flex items-center justify-center">
+                
+                <!-- Section Header -->
+                <div class="absolute top-10 md:top-20 left-0 right-0 text-center z-20">
+                     <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">What I Build & <span class="text-gradient">Work With</span></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">Crafting clean interfaces, scalable systems, and modern development experiences</p>
+                </div>
+
+                <!-- Card 1: Frontend Developer (Light Blue) -->
+                <div class="expertise-card group relative rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                     style="background: #E0E7FF; color: #1e1b4b;">
+                    <div class="flex flex-col md:flex-row gap-10 items-center h-full">
+                        <div class="flex-1 space-y-6 z-10 order-2 md:order-1">
+                            <h4 class="text-3xl font-bold">Frontend Developer</h4>
+                            <p class="text-lg opacity-90 leading-relaxed">
+                                I create responsive and intuitive user interfaces with a strong focus on usability, accessibility, and visual clarity.
+                            </p>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <span class="px-4 py-2 rounded-lg bg-white/50 text-slate-900 text-sm font-semibold shadow-sm backdrop-blur-sm">HTML</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/50 text-slate-900 text-sm font-semibold shadow-sm backdrop-blur-sm">CSS</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/50 text-slate-900 text-sm font-semibold shadow-sm backdrop-blur-sm">JavaScript</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/50 text-slate-900 text-sm font-semibold shadow-sm backdrop-blur-sm">React</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 w-full md:w-auto order-1 md:order-2 h-full flex items-center justify-center">
+                            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50 aspect-video w-full">
+                                <img src="./images/frontend_card.png" alt="Frontend Developer" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Backend Developer (Bright Blue) -->
+                <div class="expertise-card group relative rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                     style="background: #0066FF; color: white;">
+                    <div class="flex flex-col md:flex-row gap-10 items-center h-full">
+                        <div class="flex-1 space-y-6 z-10 order-2 md:order-1">
+                            <h4 class="text-3xl font-bold">Backend Developer</h4>
+                            <p class="text-lg opacity-90 leading-relaxed">
+                                I build reliable backend systems and APIs that handle business logic, security, and scalability efficiently.
+                            </p>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <span class="px-4 py-2 rounded-lg bg-white/20 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">Java</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/20 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">JDBC</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/20 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">REST APIs</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 w-full md:w-auto order-1 md:order-2 h-full flex items-center justify-center">
+                             <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-video w-full">
+                                <img src="./images/backend_card.png" alt="Backend Developer" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Database Management (Dark Blue) -->
+                <div class="expertise-card group relative rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                     style="background: #0000CC; color: white;">
+                    <div class="flex flex-col md:flex-row gap-10 items-center h-full">
+                        <div class="flex-1 space-y-6 z-10 order-2 md:order-1">
+                            <h4 class="text-3xl font-bold">Database Management</h4>
+                            <p class="text-lg opacity-90 leading-relaxed">
+                                I design and manage structured databases, ensuring optimized queries, data integrity, and secure storage.
+                            </p>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <span class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">MySQL</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">SQL</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">Design</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 w-full md:w-auto order-1 md:order-2 h-full flex items-center justify-center">
+                             <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-video w-full">
+                                <img src="./images/database_card.png" alt="Database Management" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Vibe Coding (Black) -->
+                <div class="expertise-card group relative rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                     style="background: #000000; color: white;">
+                    <div class="flex flex-col md:flex-row gap-10 items-center h-full">
+                        <div class="flex-1 space-y-6 z-10 order-2 md:order-1">
+                            <h4 class="text-3xl font-bold">Vibe Coding & Tools</h4>
+                            <p class="text-lg opacity-90 leading-relaxed">
+                                I enjoy vibe coding with AI-powered tools and modern platforms to build faster, smarter, and more creative solutions.
+                            </p>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <span class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">AI Tools</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">Gemini</span>
+                                <span class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-sm">Replit</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 w-full md:w-auto order-1 md:order-2 h-full flex items-center justify-center">
+                             <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-video w-full">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="Vibe Coding" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 relative z-10 bg-darker/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" class="py-24 relative z-10 bg-slate-50 dark:bg-darker/50 transition-colors duration-300">
+        <div class="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3">Portfolio</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4">Projects</h3>
-                <p class="text-slate-400 text-lg">Some things I’ve built while learning</p>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Projects</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">Some things I’ve built while learning</p>
             </div>
 
             <!-- Projects Grid -->
@@ -463,33 +481,33 @@
 
                 <!-- Project 1: Data Visualizer -->
                 <div
-                    class="group relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full reveal delay-100">
-                    <div class="h-48 bg-slate-800 relative z-0 group-hover:scale-105 transition-transform duration-700">
+                    class="group relative bg-white dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-white/5 overflow-hidden hover:border-primary/50 hover:shadow-xl dark:hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full reveal delay-100">
+                    <div class="h-48 bg-slate-200 dark:bg-slate-800 relative z-0 group-hover:scale-105 transition-transform duration-700">
                         <img src="./images/data_visualizer.png" alt="Data Visualizer"
-                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                            class="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Data
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Data
                                 Visualization</h4>
                             <span
-                                class="px-2 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-slate-800 text-slate-300 border border-slate-700">JAVA</span>
+                                class="px-2 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">JAVA</span>
                         </div>
 
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
                             A tool for translating CSV data into various graphical formats like bar and line charts,
                             promoting clear insight delivery.
                         </p>
 
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs text-slate-500 hover:text-slate-300 transition-colors">HTML</span>
-                            <span class="text-xs text-slate-500 hover:text-slate-300 transition-colors">Java</span>
+                            <span class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors">HTML</span>
+                            <span class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors">Java</span>
                         </div>
 
                         <div class="flex gap-3 mt-auto">
                             <a href="https://jayapraka5h.github.io/Data-visualization" target="_blank"
-                                class="flex-1 py-2.5 rounded-lg bg-white text-darker font-bold text-sm hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group/btn">
+                                class="flex-1 py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-darker font-bold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group/btn">
                                 Demo
                                 <svg class="w-3.5 h-3.5 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -499,7 +517,7 @@
                                 </svg>
                             </a>
                             <a href="https://github.com/jayapraka5h/Data-visualization" target="_blank"
-                                class="flex-1 py-2.5 rounded-lg bg-white/5 text-white font-medium text-sm hover:bg-white/10 hover:text-white transition-colors flex items-center justify-center gap-2 border border-white/10">
+                                class="flex-1 py-2.5 rounded-lg bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white font-medium text-sm hover:bg-slate-200 dark:hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-slate-200 dark:border-white/10">
                                 Code
                                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
@@ -512,35 +530,35 @@
 
                 <!-- Project 2: Investment Calculator -->
                 <div
-                    class="group relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-secondary/50 hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full reveal delay-200">
-                    <div class="h-48 bg-slate-800 relative z-0 group-hover:scale-105 transition-transform duration-700">
+                    class="group relative bg-white dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-white/5 overflow-hidden hover:border-secondary/50 hover:shadow-xl dark:hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full reveal delay-200">
+                    <div class="h-48 bg-slate-200 dark:bg-slate-800 relative z-0 group-hover:scale-105 transition-transform duration-700">
                         <img src="./images/investment_calculator.png" alt="Investment Calculator"
-                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                            class="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-xl font-bold text-white group-hover:text-secondary transition-colors">
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-secondary transition-colors">
                                 Smart Wealth Calculator</h4>
                             <span
-                                class="px-2 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-slate-800 text-slate-300 border border-slate-700">WEB APP</span>
+                                class="px-2 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">WEB APP</span>
                         </div>
 
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
                             Web app for SIP & SWP calculations with interactive visualization, aiding in better
                             financial decision-making.
                         </p>
 
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs text-slate-500 hover:text-slate-300 transition-colors">JavaScript</span>
-                            <span class="text-xs text-slate-500 hover:text-slate-300 transition-colors">CSS</span>
-                            <span class="text-xs text-slate-500 hover:text-slate-300 transition-colors">HTML</span>
-                            <span class="text-xs text-slate-500 hover:text-slate-300 transition-colors">Java</span>
+                            <span class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors">JavaScript</span>
+                            <span class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors">CSS</span>
+                            <span class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors">HTML</span>
+                            <span class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors">Java</span>
                         </div>
 
                         <div class="flex gap-3 mt-auto">
                             <a href="https://jayapraka5h.github.io/smart-wealth-calculator" target="_blank"
-                                class="flex-1 py-2.5 rounded-lg bg-white text-darker font-bold text-sm hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group/btn">
+                                class="flex-1 py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-darker font-bold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group/btn">
                                 Demo
                                 <svg class="w-3.5 h-3.5 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -550,10 +568,10 @@
                                 </svg>
                             </a>
                             <a href="https://github.com/jayapraka5h/smart-wealth-calculator" target="_blank"
-                                class="flex-1 py-2.5 rounded-lg bg-white/5 text-white font-medium text-sm hover:bg-white/10 hover:text-white transition-colors flex items-center justify-center gap-2 border border-white/10">
+                                class="flex-1 py-2.5 rounded-lg bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white font-medium text-sm hover:bg-slate-200 dark:hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-slate-200 dark:border-white/10">
                                 Code
                                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
+                            <path
                                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                 </svg>
                             </a>
@@ -563,19 +581,19 @@
 
                 <!-- Project 3: Placeholder for 3rd Item -->
                 <div
-                    class="group relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-slate-500/50 hover:shadow-2xl hover:shadow-slate-500/10 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full reveal delay-300 opacity-60">
-                    <div class="h-48 bg-slate-800 relative z-0 flex items-center justify-center overflow-hidden">
-                        <span class="text-6xl opacity-20">🚀</span>
+                    class="group relative bg-white dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-white/5 overflow-hidden hover:border-slate-500/50 hover:shadow-xl dark:hover:shadow-2xl hover:shadow-slate-500/10 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full reveal delay-300 opacity-60">
+                    <div class="h-48 bg-slate-200 dark:bg-slate-800 relative z-0 flex items-center justify-center overflow-hidden">
+                        <span class="text-6xl opacity-20 contrast-0 grayscale">🚀</span>
                     </div>
 
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-xl font-bold text-white">Upcoming Project</h4>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">Upcoming Project</h4>
                             <span
-                                class="px-2 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-slate-800 text-slate-300 border border-slate-700">TBD</span>
+                                class="px-2 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">TBD</span>
                         </div>
 
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
                             Currently working on something exciting in full stack development. Stay tuned for updates!
                         </p>
 
@@ -586,7 +604,7 @@
 
                         <div class="flex gap-3 mt-auto">
                             <button disabled
-                                class="flex-1 py-2.5 rounded-lg bg-white/10 text-slate-400 font-bold text-sm cursor-not-allowed flex items-center justify-center gap-2">
+                                class="flex-1 py-2.5 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-400 font-bold text-sm cursor-not-allowed flex items-center justify-center gap-2">
                                 In Progress
                             </button>
                         </div>
@@ -602,8 +620,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-3">Journey</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4">Education</h3>
-                <p class="text-slate-400 text-lg">My academic background</p>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Education</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">My academic background</p>
             </div>
 
             <div class="relative reveal delay-100">
@@ -619,27 +637,27 @@
                         <!-- Dot -->
                         <div
                             class="hidden md:block absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-20 edu-dot-reveal delay-200">
-                            <div class="w-4 h-4 rounded-full bg-primary animate-pulse-slow ring-4 ring-darker"></div>
+                            <div class="w-4 h-4 rounded-full bg-primary animate-pulse-slow ring-4 ring-slate-100 dark:ring-darker"></div>
                         </div>
 
                         <!-- Left Side (Date - Desktop) / Content (Mobile) -->
                         <div class="md:w-5/12 order-1 md:text-right md:pr-10 mb-6 md:mb-0 edu-card-left delay-300">
                             <div class="hidden md:block">
                                 <span
-                                    class="text-5xl font-black text-white/5 absolute -top-10 right-10 select-none pointer-events-none">2026</span>
-                                <h4 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                                    class="text-5xl font-black text-slate-900/5 dark:text-white/5 absolute -top-10 right-10 select-none pointer-events-none">2026</span>
+                                <h4 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
                                     B.Tech in AI & ML</h4>
-                                <p class="text-slate-400 mt-2 font-medium">Anantha Lakshmi Institute of Technology and
+                                <p class="text-slate-600 dark:text-slate-400 mt-2 font-medium">Anantha Lakshmi Institute of Technology and
                                     Sciences</p>
                             </div>
                             <!-- Mobile Card Variant for Left Side -->
                             <div
-                                class="md:hidden glass p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-all">
+                                class="md:hidden glass p-6 rounded-2xl border border-slate-200 dark:border-white/5 hover:border-primary/30 transition-all">
                                 <span
                                     class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-3 border border-primary/20">2022
                                     - 2026</span>
-                                <h4 class="text-xl font-bold text-white mb-1">B.Tech in AI & ML</h4>
-                                <p class="text-slate-300 text-sm">Anantha Lakshmi Institute of Technology and Sciences
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">B.Tech in AI & ML</h4>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">Anantha Lakshmi Institute of Technology and Sciences
                                 </p>
                                 <p class="text-slate-500 text-xs mt-1">Jawaharlal Nehru Technological University</p>
                             </div>
@@ -648,14 +666,14 @@
                         <!-- Right Side (Content - Desktop) -->
                         <div class="md:w-5/12 order-2 md:pl-10 edu-card-right delay-300">
                             <div
-                                class="hidden md:block glass p-8 rounded-2xl border border-white/5 hover:-translate-y-1 hover:border-primary/30 shadow-lg hover:shadow-primary/10 transition-all duration-300 relative">
+                                class="hidden md:block glass p-8 rounded-2xl border border-slate-200 dark:border-white/5 hover:-translate-y-1 hover:border-primary/30 shadow-lg hover:shadow-primary/10 transition-all duration-300 relative">
                                 <div
                                     class="absolute top-6 -left-3 w-6 h-6 bg-surface transform rotate-45 border-l border-b border-white/5 hidden md:block">
                                 </div>
                                 <span
                                     class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 border border-primary/20">2022
                                     - 2026</span>
-                                <p class="text-slate-300 leading-relaxed">
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
                                     Specializing in Artificial Intelligence and Machine Learning. Building a strong
                                     foundation in algorithms, data structures, and full-stack development.
                                 </p>
@@ -668,50 +686,49 @@
                         <!-- Dot -->
                         <div
                             class="hidden md:block absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-20 edu-dot-reveal delay-500">
-                            <div class="w-4 h-4 rounded-full bg-secondary animate-pulse-slow ring-4 ring-darker"></div>
+                            <div class="w-4 h-4 rounded-full bg-secondary animate-pulse-slow ring-4 ring-slate-100 dark:ring-darker"></div>
                         </div>
 
                         <!-- Right Side Date/Title -->
                         <div class="md:w-5/12 order-1 md:text-left md:pl-10 mb-6 md:mb-0 edu-card-right delay-500">
                             <div class="hidden md:block">
                                 <span
-                                    class="text-5xl font-black text-white/5 absolute -top-10 left-10 select-none pointer-events-none">2026</span>
-                                <h4 class="text-2xl font-bold text-white group-hover:text-secondary transition-colors">
+                                    class="text-5xl font-black text-slate-900/5 dark:text-white/5 absolute -top-10 left-10 select-none pointer-events-none">2026</span>
+                                <h4 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-secondary transition-colors">
                                     <a href="https://thetapacademy.com" target="_blank" class="hover:underline">Tap
                                         Academy</a>
                                 </h4>
-                                <p class="text-slate-400 mt-2 font-medium">Full Stack Development</p>
+                                <p class="text-slate-600 dark:text-slate-400 mt-2 font-medium">Full Stack Development</p>
                             </div>
                             <!-- Mobile Card -->
                             <div
-                                class="md:hidden glass p-6 rounded-2xl border border-white/5 hover:border-secondary/30 transition-all">
+                                class="md:hidden glass p-6 rounded-2xl border border-slate-200 dark:border-white/5 hover:border-secondary/30 transition-all">
                                 <span
                                     class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold mb-3 border border-secondary/20">Dec
                                     2025 - May 2026</span>
-                                <h4 class="text-xl font-bold text-white mb-1"><a href="https://thetapacademy.com"
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1"><a href="https://thetapacademy.com"
                                         target="_blank" class="hover:underline">Tap Academy</a></h4>
-                                <p class="text-slate-300 text-sm">Java Full Stack Student</p>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">Java Full Stack Student</p>
                             </div>
                         </div>
 
                         <!-- Left Side Content -->
                         <div class="md:w-5/12 order-2 md:pr-10 edu-card-left delay-500">
                             <div
-                                class="hidden md:block glass p-8 rounded-2xl border border-white/5 hover:-translate-y-1 hover:border-secondary/30 shadow-lg hover:shadow-secondary/10 transition-all duration-300 relative">
+                                class="hidden md:block glass p-8 rounded-2xl border border-slate-200 dark:border-white/5 hover:-translate-y-1 hover:border-secondary/30 shadow-lg hover:shadow-secondary/10 transition-all duration-300 relative">
                                 <div
                                     class="absolute top-6 -right-3 w-6 h-6 bg-surface transform rotate-45 border-r border-t border-white/5 hidden md:block">
                                 </div>
                                 <span
                                     class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold mb-4 border border-secondary/20">Dec
                                     2025 - May 2026</span>
-                                <p class="text-slate-300 leading-relaxed">
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
                                     Intensive training in Java Full Stack Development. Mastering data structures,
                                     algorithms, and building scalable web applications.
                                 </p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -722,15 +739,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-3">Get in Touch</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4">Contact Me</h3>
-                <p class="text-slate-400 text-lg">Let’s connect and build something together</p>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Contact Me</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">Let’s connect and build something together</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start reveal delay-100">
 
                 <!-- Left: Contact Info -->
                 <div class="space-y-8">
-                    <p class="text-slate-300 text-lg leading-relaxed">
+                    <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
                         I'm currently looking for new opportunities as a Full Stack Developer.
                         Whether you have a question or just want to say hi, I'll try my best to get back to you!
                     </p>
@@ -738,7 +755,7 @@
                     <div class="space-y-6">
                         <!-- Email -->
                         <a href="mailto:kammajayaprakash@gmail.com"
-                            class="flex items-center gap-5 group glass p-5 rounded-2xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                            class="flex items-center gap-5 group glass p-5 rounded-2xl border border-slate-200 dark:border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
                             <div
                                 class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -748,15 +765,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-slate-400 text-sm font-medium uppercase tracking-wider">Email</h4>
+                                <h4 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Email</h4>
                                 <span
-                                    class="text-white font-semibold text-lg group-hover:text-primary transition-colors">kammajayaprakash@gmail.com</span>
+                                    class="text-slate-900 dark:text-white font-semibold text-lg group-hover:text-primary transition-colors">kammajayaprakash@gmail.com</span>
                             </div>
                         </a>
 
                         <!-- LinkedIn (Replaces Phone) -->
                         <a href="https://www.linkedin.com/in/jayapraka5h" target="_blank"
-                            class="flex items-center gap-5 group glass p-5 rounded-2xl border border-white/5 hover:border-secondary/30 transition-all hover:-translate-y-1">
+                            class="flex items-center gap-5 group glass p-5 rounded-2xl border border-slate-200 dark:border-white/5 hover:border-secondary/30 transition-all hover:-translate-y-1">
                             <div
                                 class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -765,14 +782,14 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-slate-400 text-sm font-medium uppercase tracking-wider">LinkedIn</h4>
+                                <h4 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">LinkedIn</h4>
                                 <span
-                                    class="text-white font-semibold text-lg group-hover:text-secondary transition-colors">jayapraka5h</span>
+                                    class="text-slate-900 dark:text-white font-semibold text-lg group-hover:text-secondary transition-colors">jayapraka5h</span>
                             </div>
                         </a>
 
                         <!-- Location -->
-                        <div class="flex items-center gap-5 glass p-5 rounded-2xl border border-white/5">
+                        <div class="flex items-center gap-5 glass p-5 rounded-2xl border border-slate-200 dark:border-white/5">
                             <div
                                 class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -784,25 +801,25 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-slate-400 text-sm font-medium uppercase tracking-wider">Location</h4>
-                                <span class="text-white font-semibold text-lg">Bangalore, India</span>
+                                <h4 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Location</h4>
+                                <span class="text-slate-900 dark:text-white font-semibold text-lg">Bangalore, India</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Socials Mini -->
                     <div class="pt-6">
-                        <h4 class="text-slate-400 text-sm font-bold mb-4 uppercase tracking-[0.1em]">Follow Me</h4>
+                        <h4 class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-4 uppercase tracking-[0.1em]">Follow Me</h4>
                         <div class="flex gap-4">
                             <a href="https://www.linkedin.com/in/jayapraka5h" target="_blank"
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all transform hover:scale-110">
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-white/5 flex items-center justify-center hover:bg-[#0077b5] text-slate-600 dark:text-slate-400 hover:text-white transition-all transform hover:scale-110">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                 </svg>
                             </a>
                             <a href="https://github.com/jayapraka5h" target="_blank"
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#333] hover:text-white transition-all transform hover:scale-110">
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-white/5 flex items-center justify-center hover:bg-[#333] text-slate-600 dark:text-slate-400 hover:text-white transition-all transform hover:scale-110">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -814,7 +831,7 @@
 
                 <!-- Right: Form -->
                 <div
-                    class="glass rounded-3xl p-8 md:p-10 border border-white/5 shadow-2xl relative overflow-hidden group">
+                    class="glass rounded-3xl p-8 md:p-10 border border-slate-200 dark:border-white/5 shadow-2xl relative overflow-hidden group">
                     <!-- Decorative Gradients -->
                     <div
                         class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-700">
@@ -826,23 +843,23 @@
                     <form class="relative z-10 space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label for="name" class="text-sm font-medium text-slate-300 ml-1">Name</label>
+                                <label for="name" class="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Name</label>
                                 <input type="text" id="name"
-                                    class="w-full bg-darker/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
+                                    class="w-full bg-slate-50 dark:bg-darker/50 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                     placeholder="John Doe">
                             </div>
                             <div class="space-y-2">
-                                <label for="email" class="text-sm font-medium text-slate-300 ml-1">Email</label>
+                                <label for="email" class="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Email</label>
                                 <input type="email" id="email"
-                                    class="w-full bg-darker/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
+                                    class="w-full bg-slate-50 dark:bg-darker/50 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                     placeholder="john@example.com">
                             </div>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="message" class="text-sm font-medium text-slate-300 ml-1">Message</label>
+                            <label for="message" class="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Message</label>
                             <textarea id="message" rows="4"
-                                class="w-full bg-darker/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all resize-none"
+                                class="w-full bg-slate-50 dark:bg-darker/50 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all resize-none"
                                 placeholder="Your message here..."></textarea>
                         </div>
 
@@ -857,16 +874,10 @@
         </div>
     </section>
 
-
-
-
-
-
-
     <!-- Footer -->
-    <footer class="py-8 bg-darker text-center border-t border-white/5">
-        <p class="text-slate-500 text-sm">
-            &copy; 2025 <span class="text-white font-medium">K Jayaprakash</span>. All rights reserved.
+    <footer class="py-8 bg-slate-50 dark:bg-darker text-center border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
+        <p class="text-slate-600 dark:text-slate-500 text-sm">
+            &copy; 2025 <span class="text-slate-900 dark:text-white font-medium">K Jayaprakash</span>. All rights reserved.
         </p>
     </footer>
 

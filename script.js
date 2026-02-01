@@ -53,15 +53,29 @@ mobileMenu.querySelectorAll("a").forEach((link) => {
   });
 });
 
-// Navbar Blur Effect on Scroll
+// Navbar and Scroll Progress on Scroll
 const navbar = document.getElementById("navbar");
+const progressBar = document.getElementById("scroll-progress");
+
 window.addEventListener("scroll", () => {
+  // Navbar Toggling
   if (window.scrollY > 20) {
-    navbar.classList.add("shadow-lg");
-    navbar.style.background = "rgba(2, 6, 23, 0.85)";
+    navbar.classList.add("scrolled");
   } else {
-    navbar.classList.remove("shadow-lg");
-    navbar.style.background = "rgba(2, 6, 23, 0.6)";
+    navbar.classList.remove("scrolled");
+  }
+
+  // Scroll Progress Bar
+  const winScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+
+  const progressBar = document.getElementById("scroll-progress");
+  if (progressBar) {
+    progressBar.style.width = scrolled + "%";
   }
 });
 
@@ -81,7 +95,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".reveal, .edu-line-reveal, .edu-dot-reveal, .edu-card-left, .edu-card-right"
+    ".reveal, .edu-line-reveal, .edu-dot-reveal, .edu-card-left, .edu-card-right",
   )
   .forEach((el) => {
     observer.observe(el);
@@ -100,7 +114,7 @@ filterBtns.forEach((btn) => {
         "bg-primary",
         "text-white",
         "shadow-lg",
-        "shadow-primary/25"
+        "shadow-primary/25",
       );
       b.classList.add("text-slate-400");
     });
@@ -110,7 +124,7 @@ filterBtns.forEach((btn) => {
       "bg-primary",
       "text-white",
       "shadow-lg",
-      "shadow-primary/25"
+      "shadow-primary/25",
     );
     btn.classList.remove("text-slate-400");
 
@@ -130,3 +144,112 @@ filterBtns.forEach((btn) => {
     });
   });
 });
+
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+// Initial Check
+if (
+  localStorage.getItem("color-theme") === "dark" ||
+  (!("color-theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
+
+// Event Listener
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    // Toggle Dark Class
+    const isDark = document.documentElement.classList.toggle("dark");
+
+    // Save preference
+    if (isDark) {
+      localStorage.setItem("color-theme", "dark");
+    } else {
+      localStorage.setItem("color-theme", "light");
+    }
+  });
+}
+
+// Zoho-style Scroll Interaction - Stacked Deck (Folder Look)
+const pinSection = document.querySelector(".pin-section");
+const cards = pinSection ? pinSection.querySelectorAll(".expertise-card") : [];
+
+if (pinSection && cards.length > 0) {
+  const handleScroll = () => {
+    // 1. Get the pinned wrapper
+    const pinWrapper = pinSection.querySelector(".pin-wrapper");
+    if (!pinWrapper) return;
+
+    // 2. Dimensions
+    // With split layout, sticky starts when section top hits 0
+    const sectionRect = pinSection.getBoundingClientRect();
+
+    // Logic: scrolledPastStart = -sectionRect.top
+    const scrolledPastStart = -sectionRect.top;
+
+    // Track length = Total height of section - Height of wrapper (which stays fixed)
+    const trackLength = pinSection.offsetHeight - pinWrapper.offsetHeight;
+
+    // 3. Calculate Progress (0 to 1)
+    let progress = 0;
+    if (trackLength > 0) {
+      progress = scrolledPastStart / trackLength;
+    }
+    progress = Math.max(0, Math.min(1, progress));
+
+    // 4. Animate Cards
+    cards.forEach((card, index) => {
+      // Special handling for First Card: Always visible as the "base"
+      if (index === 0) {
+        card.style.opacity = 1;
+        const stackOffset = index * 40;
+        card.style.transform = `translateX(-50%) translateY(${stackOffset}px) scale(1)`;
+        return;
+      }
+
+      // For other cards (1, 2, 3...), they slide in overlapping the previous ones.
+      // We map the remaining progress (0 to 1) to these cards.
+      const remainingCards = cards.length - 1;
+
+      // Safety check
+      if (remainingCards <= 0) return;
+
+      const segmentSize = 1 / remainingCards;
+      // Shift index by 1 since we skipped card 0
+      const start = (index - 1) * segmentSize;
+      const end = start + segmentSize;
+
+      let cardProgress = (progress - start) / (end - start);
+      cardProgress = Math.max(0, Math.min(1, cardProgress));
+
+      const ease = 1 - Math.pow(1 - cardProgress, 3);
+      const stackOffset = index * 40;
+
+      if (cardProgress <= 0) {
+        card.style.transform = `translateX(-50%) translateY(120vh) scale(0.9)`;
+        card.style.opacity = 0;
+      } else if (cardProgress >= 1) {
+        card.style.transform = `translateX(-50%) translateY(${stackOffset}px) scale(1)`;
+        card.style.opacity = 1;
+      } else {
+        const startY = window.innerHeight;
+        const endY = stackOffset;
+        const currentY = startY - (startY - endY) * ease;
+        const scale = 0.9 + 0.1 * ease;
+
+        card.style.transform = `translateX(-50%) translateY(${currentY}px) scale(${scale})`;
+        card.style.opacity = Math.min(1, cardProgress * 3);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
+  // Initial call
+  setTimeout(handleScroll, 100); // Slight delay to ensure layout is ready
+  handleScroll();
+}
