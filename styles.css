@@ -48,8 +48,12 @@ body {
   border-radius: 1000px;
   padding: 2px;
   background: linear-gradient(45deg, #0ea5e9, #8b5cf6, #f43f5e);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -180,5 +184,76 @@ body {
   .edu-card-right.active {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Logo Slider */
+.logo-slider {
+  overflow: hidden;
+  padding: 40px 0;
+  background: transparent;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-track img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  /* Show original colors by default */
+  filter: none;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Invert black logos (Vercel, Replit) to make them white */
+.logo-track img.invert {
+  filter: invert(1);
+}
+
+.logo-track img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: none; /* Reset filter on hover? No, keep invert for those that need it, or assume hover background doesn't change? */
+}
+
+.logo-track img.invert:hover {
+  filter: invert(1); /* Keep inverted on hover if background is still dark */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
