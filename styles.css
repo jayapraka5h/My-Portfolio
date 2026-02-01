@@ -207,8 +207,6 @@ body {
     transform: translateY(0);
   }
 }
-
-/* Logo Slider */
 .logo-slider {
   overflow: hidden;
   padding: 40px 0;
@@ -316,14 +314,16 @@ body {
 
 .expertise-card {
   position: absolute;
-  top: 15vh; /* Slightly higher to center better */
+  top: 24vh; /* Increased to prevent overlap with header text */
   left: 50%;
   transform: translateX(-50%) translateY(120vh) scale(0.9); /* Start off-screen */
-  width: 90%;
+  width: 100%;
   max-width: 900px;
-  height: 450px; /* Reduced height to fit content accurately */
+  min-height: 380px; /* spec: minHeight */
+  height: auto; /* Allow growth */
   background: white;
-  border-radius: 24px 24px 0 0; /* Folder tab look */
+  border-radius: 24px !important; /* spec: borderRadius - forced to ensure bottom is rounded */
+  padding: 48px; /* spec: padding */
   box-shadow: 0 -10px 40px -10px rgba(0, 0, 0, 0.15); /* Top shadow is key for folder look */
   transition: box-shadow 0.3s ease;
   will-change: transform, opacity;
@@ -362,4 +362,27 @@ body {
 }
 .expertise-card:nth-child(5) {
   z-index: 40;
+}
+
+/* AntiGravity Animation */
+@keyframes float-ag {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px); /* spec: floatDistance */
+  }
+}
+
+.animate-antigravity {
+  animation: float-ag 4s ease-in-out infinite; /* spec: duration, timing */
+}
+
+/* Section Padding Utility */
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 16px;
+  padding-right: 16px;
 }

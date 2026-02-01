@@ -149,11 +149,7 @@ filterBtns.forEach((btn) => {
 const themeToggleBtn = document.getElementById("theme-toggle");
 
 // Initial Check
-if (
-  localStorage.getItem("color-theme") === "dark" ||
-  (!("color-theme" in localStorage) &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-) {
+if (localStorage.getItem("color-theme") === "dark") {
   document.documentElement.classList.add("dark");
 } else {
   document.documentElement.classList.remove("dark");
@@ -206,7 +202,7 @@ if (pinSection && cards.length > 0) {
       // Special handling for First Card: Always visible as the "base"
       if (index === 0) {
         card.style.opacity = 1;
-        const stackOffset = index * 40;
+        const stackOffset = 0;
         card.style.transform = `translateX(-50%) translateY(${stackOffset}px) scale(1)`;
         return;
       }
@@ -227,7 +223,7 @@ if (pinSection && cards.length > 0) {
       cardProgress = Math.max(0, Math.min(1, cardProgress));
 
       const ease = 1 - Math.pow(1 - cardProgress, 3);
-      const stackOffset = index * 40;
+      const stackOffset = 0; // Cards stack directly on top of each other
 
       if (cardProgress <= 0) {
         card.style.transform = `translateX(-50%) translateY(120vh) scale(0.9)`;
